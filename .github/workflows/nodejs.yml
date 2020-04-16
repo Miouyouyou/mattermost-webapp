@@ -30,3 +30,8 @@ jobs:
       run: make package-ci
       env:
         CI: true
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1
+      with:
+        name: mattermost-webapp
+        path: dist
