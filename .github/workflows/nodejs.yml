@@ -24,6 +24,9 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: make package-ci
+    - name: Install dependencies
+      run: make node_modules
+    - name: Package CI
+      run: make package-ci
       env:
         CI: true
